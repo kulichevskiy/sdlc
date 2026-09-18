@@ -1,7 +1,7 @@
 {
-  "name": "@kulichevskiy/skills",
-  "version": "0.3.0",
-  "description": "Agent skills for Claude Code, Cursor, Codex and GitHub Copilot, installable with npx",
+  "name": "@kulichevskiy/sdlc",
+  "version": "0.3.1",
+  "description": "SDLC plugin and skills for AI-assisted product development",
   "type": "module",
   "bin": {
     "agent-skills": "bin/agent-skills.mjs"
@@ -36,6 +36,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kulichevskiy/skills.git"
+    "url": "git+https://github.com/kulichevskiy/sdlc.git"
   }
 }

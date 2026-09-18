@@ -7,8 +7,8 @@ Install the `sdlc` plugin through an agent's plugin manager, or copy its skills 
 ### Claude Code
 
 ```bash
-claude plugin marketplace add kulichevskiy/skills
-claude plugin install sdlc@kulichevskiy-skills --scope project
+claude plugin marketplace add kulichevskiy/sdlc
+claude plugin install sdlc@kulichevskiy --scope project
 ```
 
 Use `--scope user` to install across projects. Start with `/sdlc:setup`, or `/sdlc:ui-kit` for UI work. See the [Claude plugin reference](https://code.claude.com/docs/en/plugins-reference).
@@ -16,8 +16,8 @@ Use `--scope user` to install across projects. Start with `/sdlc:setup`, or `/sd
 ### Codex
 
 ```bash
-codex plugin marketplace add kulichevskiy/skills
-codex plugin add sdlc@kulichevskiy-skills
+codex plugin marketplace add kulichevskiy/sdlc
+codex plugin add sdlc@kulichevskiy
 ```
 
 Select `setup` or `ui-kit` from the SDLC plugin.
@@ -35,7 +35,7 @@ Use the file installer below with `--target=cursor` or `--target=copilot`.
 Requires Node 18 or newer. Run from your project:
 
 ```bash
-npx github:kulichevskiy/skills sdlc
+npx github:kulichevskiy/sdlc sdlc
 ```
 
 The installer asks for the agent, installation scope, and response language. Choose `project` for the current repository or `user` for all your projects. The menu shows both destination paths.
@@ -43,7 +43,7 @@ The installer asks for the agent, installation scope, and response language. Cho
 To choose without prompts:
 
 ```bash
-npx github:kulichevskiy/skills sdlc --target=codex --scope=project --lang=English
+npx github:kulichevskiy/sdlc sdlc --target=codex --scope=project --lang=English
 ```
 
 Replace `sdlc` with `sdlc-ui` for the three UI skills. Run without a skill name to list available bundles and standalone skills.
@@ -53,13 +53,13 @@ Replace `sdlc` with `sdlc-ui` for the three UI skills. Run without a skill name 
 Requires `sh`, `curl`, and `tar`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kulichevskiy/skills/main/install.sh | sh -s -- sdlc
+curl -fsSL https://raw.githubusercontent.com/kulichevskiy/sdlc/main/install.sh | sh -s -- sdlc
 ```
 
 The shell installer accepts the same options:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kulichevskiy/skills/main/install.sh | sh -s -- sdlc --target=codex --scope=user --lang=English
+curl -fsSL https://raw.githubusercontent.com/kulichevskiy/sdlc/main/install.sh | sh -s -- sdlc --target=codex --scope=user --lang=English
 ```
 
 On Windows, run these commands in WSL.
@@ -112,7 +112,7 @@ Keep each bundle's skills together so their relative references resolve. For upd
 Run the file installer from the target project:
 
 ```bash
-node /path/to/skills/bin/agent-skills.mjs sdlc --target=codex --scope=project --lang=English
+node /path/to/sdlc/bin/agent-skills.mjs sdlc --target=codex --scope=project --lang=English
 ```
 
-For native plugins, replace `kulichevskiy/skills` in the marketplace command with the absolute path to the checkout. Then run the same plugin install command.
+For native plugins, replace `kulichevskiy/sdlc` in the marketplace command with the absolute path to the checkout. Then run the same plugin install command.

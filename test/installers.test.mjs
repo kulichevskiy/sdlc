@@ -250,7 +250,7 @@ test('native catalogs point to one self-contained SDLC plugin', () => {
     assert.equal(manifest.version, pkg.version)
     const catalogFile = host === 'codex' ? '.agents/plugins/marketplace.json' : `.${host}-plugin/marketplace.json`
     const catalog = JSON.parse(readFileSync(join(root, catalogFile), 'utf8'))
-    assert.equal(catalog.name, 'kulichevskiy-skills')
+    assert.equal(catalog.name, 'kulichevskiy')
     assert.equal(catalog.plugins.length, 1)
     const entry = catalog.plugins[0]
     assert.equal(entry.name, manifest.name)

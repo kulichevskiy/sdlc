@@ -1,10 +1,10 @@
 {
   "name": "sdlc",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "AI-assisted product development: intent, specification, implementation, review, and a shared web UI Kit.",
   "author": {
     "name": "Alexey Kulichevskiy"
   },
-  "repository": "https://github.com/kulichevskiy/skills",
+  "repository": "https://github.com/kulichevskiy/sdlc",
   "license": "MIT"
 }

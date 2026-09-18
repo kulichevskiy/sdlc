@@ -47,8 +47,8 @@ function usage(skills) {
   console.log(`
 Skills for Claude Code, Cursor, Codex and GitHub Copilot.
 
-  npx github:kulichevskiy/skills <skill|sdlc|sdlc-ui>            interactive installation
-  npx github:kulichevskiy/skills <skill|sdlc|sdlc-ui> --global   for every project
+  npx github:kulichevskiy/sdlc <skill|sdlc|sdlc-ui>            interactive installation
+  npx github:kulichevskiy/sdlc <skill|sdlc|sdlc-ui> --global   for every project
 
   --target=<${TARGETS.map((it) => it.name).join('|')}>   where to install, asked if omitted
   --scope=<project|user>   installation scope, asked if omitted

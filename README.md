@@ -11,15 +11,15 @@ Works with Claude Code, Codex, Cursor, and GitHub Copilot.
 For Codex:
 
 ```bash
-codex plugin marketplace add kulichevskiy/skills
-codex plugin add sdlc@kulichevskiy-skills
+codex plugin marketplace add kulichevskiy/sdlc
+codex plugin add sdlc@kulichevskiy
 ```
 
 For Claude Code:
 
 ```bash
-claude plugin marketplace add kulichevskiy/skills
-claude plugin install sdlc@kulichevskiy-skills --scope project
+claude plugin marketplace add kulichevskiy/sdlc
+claude plugin install sdlc@kulichevskiy --scope project
 ```
 
 Use `--scope user` in the Claude command to install across projects. See the [installation guide](docs/installation.md#native-plugin) for Codex project configuration.
@@ -29,13 +29,13 @@ Use `--scope user` in the Claude command to install across projects. See the [in
 With Node 18 or newer:
 
 ```bash
-npx github:kulichevskiy/skills sdlc
+npx github:kulichevskiy/sdlc sdlc
 ```
 
 The installer asks which agent you use, whether to install in the current project or for your user, and which language the agent should answer in. To set these options directly:
 
 ```bash
-npx github:kulichevskiy/skills sdlc --target=codex --scope=project --lang=English
+npx github:kulichevskiy/sdlc sdlc --target=codex --scope=project --lang=English
 ```
 
 Targets are `claude`, `codex`, `cursor`, and `copilot`. Use `--scope=user` to install across projects. `--global` does the same thing.
@@ -95,7 +95,7 @@ Use `ui-implement` to build a screen, then `ui-review` to check it. Missing comp
 All three skills are included in `sdlc`. To install only the UI skills as files:
 
 ```bash
-npx github:kulichevskiy/skills sdlc-ui --target=codex
+npx github:kulichevskiy/sdlc sdlc-ui --target=codex
 ```
 
 Start with `$ui-kit` in Codex or `/ui-kit` in Claude Code and Cursor. In the Claude plugin, use `/sdlc:ui-kit`. In Copilot, ask the agent to use `ui-kit`.
@@ -118,7 +118,7 @@ Setup also records document locations and delivery requirements. See the [projec
 [setup-env](skills/setup-env/SKILL.md) checks, installs, and verifies a project's development tools:
 
 ```bash
-npx github:kulichevskiy/skills setup-env
+npx github:kulichevskiy/sdlc setup-env
 ```
 
 ## Contributing

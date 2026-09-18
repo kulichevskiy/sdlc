@@ -8,7 +8,7 @@
 # difference — change one side and run it.
 set -eu
 
-REPO="kulichevskiy/skills"
+REPO="kulichevskiy/sdlc"
 BRANCH="main"
 TARBALL="https://codeload.github.com/$REPO/tar.gz/refs/heads/$BRANCH"
 NAMES="claude cursor codex copilot"
