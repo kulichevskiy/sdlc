@@ -88,7 +88,9 @@ Task documents live in `docs/feat-{slug}/` by default. Each stage reads the earl
 | [ui-implement](plugins/sdlc/skills/ui-implement/SKILL.md) | Build screens from the kit in the project's stack | Working UI using shared components |
 | [ui-review](plugins/sdlc/skills/ui-review/SKILL.md) | Compare code and rendered screens with the kit | Findings and proposed fixes for your review |
 
-The reference page documents semantic colors, typography, sizes, spacing, desktop and mobile layouts, and component states. It runs inside the project and uses the same components as the product. For an existing product, `ui-kit` first inspects its screens and components.
+The reference page is a technical UI kit, without product screen mockups: color palettes with tints and shades, fonts and type scales, text specimens, icons, sizing and spacing, annotated desktop/mobile grids, surfaces, interaction rules, and component states. It runs inside the project and uses canonical tokens and shared components for future screens. For an existing product, `ui-kit` first inspects its screens and components.
+
+Build it section by section in one live panel: preferences or a proposal, rendered specimens, feedback, revisions, then acceptance before moving on. Start with colors, add typography next, and continue through the kit while keeping accepted sections visible.
 
 Use `ui-implement` to build a screen, then `ui-review` to check it. Missing components prompt a discussion about extending the kit. Review produces a report; you decide which changes to apply.
 

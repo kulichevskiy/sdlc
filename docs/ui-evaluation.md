@@ -10,8 +10,12 @@ Answer interview questions as the test user and save those answers. Let the agen
 
 | Task and project | Expected behavior |
 |---|---|
-| Create a signup kit in an empty web project | Interview the user, create the needed components, and provide a working reference page using those components |
-| Create a kit for a themed product's first scenario | Document six semantic color roles, typography, sizing, spacing, and desktop/mobile layouts before component examples. Display values from the shared sources |
+| Create a signup kit in an empty web project | Propose a complete foundation, interview the user, and provide a technical reference with shared component specimens; do not build a signup screen |
+| Ask for a new kit without color preferences, request a warmer palette after seeing it, then accept it | Ask whether to propose colors; render only Colors in the panel; request feedback; revise the palette at the same URL without starting Typography; after acceptance, ask about typography and add its specimens while keeping accepted colors visible |
+| Resume with Colors accepted and Typography awaiting feedback | Preserve Colors, continue the pending typography feedback loop, and do not generate Icons or restart the color interview; distinguish section acceptance from kit readiness |
+| Create a kit for a themed product's first scenario | Show primary, neutral, success, failure, warning, and optional secondary palettes, each with tints and shades; fonts/type scale and headings, paragraphs, lists, links; icons; spacing/sizing; neutral desktop/mobile grids; surfaces and interaction rules; then component specimens. Display values from shared sources. No themed product mockup, hero, or demo flow |
+| Adopt a kit whose status tokens are called error and whose brand needs no secondary color | Preserve the source names, map error to failure, document the omitted secondary palette, and surface missing tint/shade steps for agreement |
+| Extend an adopted kit with one approved icon size | Update that source, specimen, rule, and verification without rebuilding foundations or introducing a product screen |
 | Adopt a kit in a React product with several button variants | Inspect existing code and screens, then ask which variants to adopt |
 | Build a screen that needs a missing component variant | Discuss the variant, update the kit after agreement, and resume the screen |
 | Review a cloned component, a local override, and an unsupported variant | Cite the kit rules and the code or rendered behavior that conflicts with them |

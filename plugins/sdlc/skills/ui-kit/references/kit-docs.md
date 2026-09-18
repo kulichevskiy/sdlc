@@ -2,14 +2,15 @@
 
 Adapt existing documentation before creating this default layout. Markdown is an index of accepted decisions and real source files, not a second implementation. Use relative links where practical and stable rule/component IDs.
 
-The visual page follows the [technical showcase contract](showcase.md). Keep Colors, Typography, Sizing & spacing, Layout, and Components directly discoverable in the rendered reference. Link each documentation section to its corresponding showcase section and canonical source; documentation alone does not replace the rendered specimens.
+The visual page follows the [technical showcase contract](showcase.md). Keep Colors, Typography, Icons, Sizing & spacing, Layout, Surfaces, Interaction & accessibility, and Components directly discoverable in the rendered reference. Together, the written rules and live specimens form a technical document for future screen authors; product mockups are not a deliverable. Link each documentation section to its corresponding showcase section and canonical source; documentation alone does not replace the rendered specimens.
 
 ## docs/ui-kit/index.md
 
 Record:
 
-- Kit name, scope/first scenarios, stack, and source roots.
+- Kit name, foundation/component scope, product context, stack, and source roots.
 - Revision; `draft`, `incomplete`, or `ready`; accepted decisions and their user approval.
+- Section progress: planned, awaiting feedback, or accepted; the current section, pending feedback, and accepted choice. Update as the panel grows so a later session can resume the same loop. User acceptance of a section does not replace its technical verification or mark the whole kit ready.
 - Links to rules, component catalog, tokens, and shared styles/components.
 - Showcase launch command, route/URL, and prerequisites. The showcase is a page in the project or its existing component explorer, using the shared implementation.
 - Verification snapshot (commit plus relevant dirty-file hashes/diff when needed), commands/results, rendered states/viewports, and evidence locations.
@@ -17,9 +18,9 @@ Record:
 
 ## docs/ui-kit/rules.md
 
-Give each adopted rule a stable ID, statement, scope, and source/example pointer. Cover the agreed foundations: colors, typography, sizes, spacing, grid, icons, composition, responsive behavior, and relevant interaction/accessibility rules. Link to actual token definitions rather than duplicating their values as another source of truth.
+Give each adopted rule a stable ID, statement, scope, and source/example pointer. Cover the agreed foundations: palette scales and semantic colors, fonts and typography, icons, sizes, spacing, responsive grids, surfaces/borders/elevation, and interaction/accessibility conventions. Link to actual token definitions rather than duplicating their values as another source of truth.
 
-Map `primary`, `secondary`, `neutral`, `success`, `warning`, and `error` to source tokens and intended use. Record typography role definitions, the actual spacing/sizing scale, and desktop/mobile layout rules with concrete units and transition thresholds. If a value is unsettled, label it as a gap. The visual page may display values derived from canonical sources; avoid a second manually maintained token registry in documentation.
+Map `primary`, `neutral`, `success`, `failure`, and `warning` to source palettes, including their tint/shade scales and semantic uses. Record whether `secondary` is included and why; document existing `error`/`danger` naming as an alias for `failure` where applicable. Record font sources, type scales and text-role definitions, icon imports and sizing, the actual spacing/sizing scale, desktop/mobile grid rules with concrete units and transition thresholds, and surface/interaction conventions. If a value is unsettled, label it as a gap. The visual page may display values derived from canonical sources; avoid a second manually maintained token registry in documentation.
 
 Example shape (replace with project decisions, not prescribed values):
 
