@@ -1,0 +1,53 @@
+### Result
+{
+  "url": "http://127.0.0.1:52825/showcase.html",
+  "title": "Kit reference",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+  "documentWidth": 390,
+  "rows": [
+    {
+      "id": "specimen",
+      "display": "flex",
+      "gap": "16px",
+      "flexWrap": "wrap",
+      "rect": {
+        "x": 24,
+        "y": 83.4375,
+        "width": 342,
+        "height": 43,
+        "top": 83.4375,
+        "right": 366,
+        "bottom": 126.4375,
+        "left": 24
+      }
+    }
+  ],
+  "buttons": [
+    {
+      "label": "Primary action",
+      "className": "kit-button",
+      "inlineStyle": null,
+      "disabled": false,
+      "background": "rgb(29, 78, 216)",
+      "color": "rgb(255, 255, 255)",
+      "rect": {
+        "x": 24,
+        "y": 83.4375,
+        "width": 136.4375,
+        "height": 43,
+        "top": 83.4375,
+        "right": 160.4375,
+        "bottom": 126.4375,
+        "left": 24
+      }
+    }
+  ]
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({url:location.href,title:document.title,viewport:{width:innerWidth,height:innerHeight},userAgent:navigator.userAgent,documentWidth:document.documentElement.scrollWidth,rows:[...document.querySelectorAll(\'.stack\')].map(e=>({id:e.id,display:getComputedStyle(e).display,gap:getComputedStyle(e).gap,flexWrap:getComputedStyle(e).flexWrap,rect:e.getBoundingClientRect().toJSON()})),buttons:[...document.querySelectorAll(\'button\')].map(e=>({label:e.textContent,className:e.className,inlineStyle:e.getAttribute(\'style\'),disabled:e.disabled,background:getComputedStyle(e).backgroundColor,color:getComputedStyle(e).color,rect:e.getBoundingClientRect().toJSON()}))})');
+```

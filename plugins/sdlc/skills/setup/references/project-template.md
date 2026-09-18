@@ -10,7 +10,7 @@ Task source of truth: Git files
 Delivery: one integration branch and PR per change, unless agreed otherwise
 Delegation: sequential unless supported and authorized
 
-Use `draft` while policy decisions await acceptance, `incomplete` for accepted policy with setup gaps, and `ready` after the selected setup is verified and its gaps are closed. Preserve answers when resuming setup.
+Set status using setup's acceptance, verification, and gap-closure criteria; preserve accepted answers on resume.
 
 ## Standards sources
 
@@ -18,9 +18,9 @@ Link repository instructions, adopted coding standards, architecture decisions, 
 
 ## Verification
 
-Resolve each gate's requirement to `required`, `not required`, or `not applicable` with rationale from the adopted profile. Basic proposes lint, typecheck, unit tests, and E2E for key user scenarios as appropriate to the stack. Strict additionally proposes CRAP < 30 and mutation testing. Explicit overrides govern. Missing tools are setup gaps, not evidence that a gate is non-applicable.
+For each gate record `required`, `not required`, or `not applicable`, with rationale from the adopted profile and overrides. Missing tools are setup gaps, not non-applicability.
 
-`Pending` is a blocking configuration gap, not a command or a passing result. For gates that are not required or not applicable, replace pending cells with the adopted rationale; they need no tools. Do not leave optional gates as false blockers.
+Replace `Pending` with a usable command/result or the adopted rationale for a non-required/non-applicable gate. Unresolved required cells block setup; optional gates need no tooling.
 
 | Gate | Requirement and rationale | Command | Scope | Pass condition | Evidence/result | Enforcement |
 | --- | --- | --- | --- | --- | --- | --- |

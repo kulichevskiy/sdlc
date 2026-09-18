@@ -1,0 +1,26 @@
+{"actual":"name,email,internalNote\nAda,ada@example.test,Staff follow-up","expected":"name,email\nAda,ada@example.test","emptyActual":"name,email,internalNote"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'name,email,internalNote\nAda,ada@example.test,Staff follow-up'
+- 'name,email\nAda,ada@example.test'
+
+    at file:///private/tmp/sdlc-pruning-pzwap8ao/test-quality-session/[eval1]:6:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async node:internal/modules/esm/loader:226:26
+    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:223:20)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'name,email,internalNote\nAda,ada@example.test,Staff follow-up',
+  expected: 'name,email\nAda,ada@example.test',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.5.0

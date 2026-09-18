@@ -3,7 +3,7 @@ name: code-review
 description: "Review an SDLC change against its original intent, accepted specification, and documented engineering standards. Use for independent review of a ticket, change, or PR."
 ---
 
-Read the [shared workflow contract](../setup/references/workflow.md) first and apply its mandatory setup entry check before this stage. If setup is needed, follow [setup](../setup/SKILL.md), then return to the original task once the project profile is ready. Resolve the change directory from `docs/sdlc/project.md`. Follow the target repository's instructions and the user's existing decisions.
+Read and follow the [shared workflow contract](../setup/references/workflow.md), including its setup entry check. Resolve task artifacts from `docs/sdlc/project.md`.
 
 # Review code
 
@@ -13,7 +13,7 @@ Read intent, spec, plan, relevant tickets, project standards, and verification e
 
 Run separate review passes. Use independent read-only subagents when permitted; otherwise make separate passes and disclose that independence was limited.
 
-1. **Intent and Spec:** Does behavior meet the original outcomes as well as detailed requirements? Look for missing/partial outcomes, wrong edge-case behavior, contradictions, and scope expansion. Map findings to outcome/requirement IDs and code evidence. Verify tests actually exercise the claimed behavior.
+1. **Intent and Spec:** Does behavior meet the original outcomes as well as detailed requirements? Look for missing/partial outcomes, wrong edge-case behavior, contradictions, and scope expansion. Map findings to outcome/requirement IDs and code evidence. Verify tests exercise the claimed behavior through suitable interfaces, with expected results independent of the implementation. Flag tests that repeat its algorithm or share an incorrect assumption with it; passing coverage or mutation gates alone does not prove the requirement.
 2. **Standards and correctness:** Read applicable written standards and ADRs. Look for logic errors, regressions, security defects, and violated architectural contracts. Cite the rule for a documented violation. Treat complexity, duplication, naming, and other general design heuristics as explained judgments, not invented project policy. Do not repeat findings already enforced by tooling.
 
 For a ticket review, assess that ticket's promised slice and detect damage to neighboring behavior; do not flag later planned tickets as missing work. For a whole-change review, cover every requirement.

@@ -1,0 +1,71 @@
+### Result
+{
+  "url": "http://127.0.0.1:52825/",
+  "title": "Account",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+  "documentWidth": 1280,
+  "rows": [
+    {
+      "id": "actions",
+      "display": "flex",
+      "gap": "16px",
+      "flexWrap": "wrap",
+      "rect": {
+        "x": 24,
+        "y": 83.4375,
+        "width": 1232,
+        "height": 43,
+        "top": 83.4375,
+        "right": 1256,
+        "bottom": 126.4375,
+        "left": 24
+      }
+    }
+  ],
+  "buttons": [
+    {
+      "label": "Save",
+      "className": "kit-button",
+      "inlineStyle": "background: rgb(192, 38, 211);",
+      "disabled": false,
+      "background": "rgb(192, 38, 211)",
+      "color": "rgb(255, 255, 255)",
+      "rect": {
+        "x": 24,
+        "y": 83.4375,
+        "width": 66.9609375,
+        "height": 43,
+        "top": 83.4375,
+        "right": 90.9609375,
+        "bottom": 126.4375,
+        "left": 24
+      }
+    },
+    {
+      "label": "Cancel",
+      "className": "kit-button",
+      "inlineStyle": null,
+      "disabled": false,
+      "background": "rgb(29, 78, 216)",
+      "color": "rgb(255, 255, 255)",
+      "rect": {
+        "x": 106.9609375,
+        "y": 83.4375,
+        "width": 81.8828125,
+        "height": 43,
+        "top": 83.4375,
+        "right": 188.84375,
+        "bottom": 126.4375,
+        "left": 106.9609375
+      }
+    }
+  ]
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({url:location.href,title:document.title,viewport:{width:innerWidth,height:innerHeight},userAgent:navigator.userAgent,documentWidth:document.documentElement.scrollWidth,rows:[...document.querySelectorAll(\'.stack\')].map(e=>({id:e.id,display:getComputedStyle(e).display,gap:getComputedStyle(e).gap,flexWrap:getComputedStyle(e).flexWrap,rect:e.getBoundingClientRect().toJSON()})),buttons:[...document.querySelectorAll(\'button\')].map(e=>({label:e.textContent,className:e.className,inlineStyle:e.getAttribute(\'style\'),disabled:e.disabled,background:getComputedStyle(e).backgroundColor,color:getComputedStyle(e).color,rect:e.getBoundingClientRect().toJSON()}))})');
+```

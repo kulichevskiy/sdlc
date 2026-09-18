@@ -3,17 +3,17 @@ name: ui-implement
 description: "Build production web screens from an adopted UI Kit in the project's stack. Use when creating or changing UI from shared components, with user agreement before extending the kit."
 ---
 
-Read the [shared UI contract](../ui-kit/references/ui-workflow.md). Use existing project policy and task documents; this standalone UI entry point does not require the full SDLC chain.
+Read and follow the [shared UI contract](../ui-kit/references/ui-workflow.md). This standalone entry point requires no full SDLC chain.
 
 # Build web screens
 
-Inspect the application, adopted kit, actual shared components, routing, data interfaces, and existing task decisions. Interview the user about unresolved screen requirements: purpose, users, actions, data, navigation, relevant loading/empty/error states, and responsive behavior. Ask one material question at a time and reuse accepted answers. Agree on the concrete scope before building; do not reopen scope already authorized.
+Inspect the application, kit, shared components, routing, data interfaces, and task decisions. Resolve screen requirements one material question at a time: purpose, users, actions, data, navigation, loading/empty/error states, and responsive behavior. Agree on scope before building; reuse accepted answers and authorization.
 
-If the kit is absent or the relevant scope is not adopted/usable, follow [ui-kit](../ui-kit/SKILL.md) to prepare only what this task needs, then resume the screen. Preserve the original task and decisions. Do not generate placeholder SDLC documents or build an unrelated library first.
+If the relevant kit scope is absent, unadopted, or unusable, follow [ui-kit](../ui-kit/SKILL.md) to prepare what this task needs, then resume it with existing decisions. Avoid placeholder SDLC documents or an unrelated library.
 
-Map the screen to the kit's components, tokens, supported variants, and composition rules. Ordinary combinations of approved components can be implemented directly. For a missing component, new variant, token, or rule, show the user the need and options: use existing elements or extend the kit. Until decided, continue only independent work. Do not silently substitute a local clone or arbitrary styling.
+Map the screen to approved components, tokens, variants, and composition rules. Implement ordinary valid composition directly. For a missing capability, present reuse versus extension before dependent work; continue independent work while awaiting the decision. Do not substitute clones or arbitrary styling.
 
-For an approved extension, apply the kit skill's procedure to shared sources, documentation, and showcase before resuming dependent UI work. Explain effects on existing consumers; do not include an unrequested migration of legacy screens.
+Apply approved extensions through ui-kit before dependent UI work. Explain effects on existing consumers; legacy migration remains a separate scope.
 
 Implement working UI in the application's existing stack and structure, including routes, interactions, and agreed data integration. In React, use the actual shared React components; a standalone mockup is not the result. Do not invent backend contracts. If an API or dependency is unavailable, report it and agree on the integration boundary; clearly label fixtures and unfinished behavior.
 

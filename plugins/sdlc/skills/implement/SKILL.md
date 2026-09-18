@@ -3,7 +3,7 @@ name: implement
 description: "Implement a ticket or execute an accepted SDLC ticket plan, coordinating dependencies and isolated subagents when requested. Use for execution of the file-based SDLC workflow."
 ---
 
-Read the [shared workflow contract](../setup/references/workflow.md) first and apply its mandatory setup entry check before this stage. If setup is needed, follow [setup](../setup/SKILL.md), then return to the original task once the project profile is ready. Resolve the change directory from `docs/sdlc/project.md`. Follow the target repository's instructions and the user's existing decisions.
+Read and follow the [shared workflow contract](../setup/references/workflow.md), including its setup entry check. Resolve task artifacts from `docs/sdlc/project.md`.
 
 # Implement tickets
 
@@ -12,6 +12,8 @@ Resolve the requested ticket or plan; verify accepted source revisions, dependen
 Before edits, inspect branch ownership and worktree changes. Isolate the task when unrelated work would mix into the result. A ready ticket starts only after all its blockers are done and their commits are present in the working branch. Claim it in `execution.md`; after interruption, inspect worktrees, commits, and active workers before reclaiming it.
 
 Implement the acceptance criteria with a feedback loop. For a bug, reproduce the faulty behavior before fixing it, preferably with a regression test. Run focused checks during edits and the ticket's full required verification before completion. Preserve verification strength; a needed change to a test's contract must be justified against the spec.
+
+Follow the spec's test interfaces and independent expectations; no renewed approval is needed for tests within that strategy. Exercise real behavior, substituting external dependencies where appropriate. Avoid assertions coupled to internal calls or computed by the production algorithm: for CSV export, assert a known expected header from the requirement rather than generating it from the production column list. Verify that a regression test catches the reported symptom before the fix.
 
 For whole-plan execution, delegate independent ready tickets to subagents when the environment permits delegation and useful coordinator work can continue alongside them. Respect any user restriction on delegation; use sequential execution for a single ticket or tightly coupled work. Each worker receives the ticket, accepted source revisions, repository instructions, owned paths, verification contract, base commit, and output expectations. Give each concurrent writer its own worktree. If isolation or delegation is unavailable, execute sequentially. Workers update only their owned code and return commits plus evidence; the coordinator owns shared planning/status files.
 

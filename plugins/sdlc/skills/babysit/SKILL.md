@@ -3,7 +3,7 @@ name: babysit
 description: "Drive an SDLC pull request through CI, review feedback, fixes, and merge when authorized. Use when asked to babysit a PR or carry it through to merge."
 ---
 
-Read the [shared workflow contract](../setup/references/workflow.md) first and apply its mandatory setup entry check before this stage. If setup is needed, follow [setup](../setup/SKILL.md), then return to the original task once the project profile is ready. Resolve the change directory from `docs/sdlc/project.md`. Follow the target repository's instructions and the user's existing decisions.
+Read and follow the [shared workflow contract](../setup/references/workflow.md), including its setup entry check. Resolve task artifacts from `docs/sdlc/project.md`.
 
 # Babysit a pull request
 

@@ -3,13 +3,13 @@ name: to-tickets
 description: "Turn an SDLC specification into a file-based implementation plan with small verifiable tickets and explicit dependencies. Use to prepare an accepted spec for execution."
 ---
 
-Read the [shared workflow contract](../setup/references/workflow.md) first and apply its mandatory setup entry check before this stage. If setup is needed, follow [setup](../setup/SKILL.md), then return to the original task once the project profile is ready. Resolve the change directory from `docs/sdlc/project.md`. Follow the target repository's instructions and the user's existing decisions.
+Read and follow the [shared workflow contract](../setup/references/workflow.md), including its setup entry check. Resolve task artifacts from `docs/sdlc/project.md`.
 
 # Plan implementation tickets
 
 Read intent and spec, verify their revisions and acceptance, then inspect enough code to identify integration points and test commands. Drafting may proceed before acceptance; tickets stay draft until their prerequisites are accepted.
 
-Write `plan.md` as a short ordered approach, integration strategy, risks, and a coverage map from every requirement ID to ticket IDs. Default to one integration branch and one PR per change. Preserve a different delivery boundary if the user requested it.
+Write `plan.md` with the ordered approach, integration strategy, risks, and coverage map from every requirement ID to ticket IDs. Use the shared delivery boundary unless the user specified another.
 
 Write one `tickets/TNN.md` per independently verifiable slice. Include:
 - Stable ticket ID, title, status, and `blocked_by` IDs.
