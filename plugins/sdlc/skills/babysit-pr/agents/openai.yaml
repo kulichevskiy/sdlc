@@ -1,0 +1,4 @@
+interface:
+  display_name: "babysit-pr"
+  short_description: "Carry a pull request through checks and merge"
+  default_prompt: "Use $babysit-pr for this project and the task I describe."

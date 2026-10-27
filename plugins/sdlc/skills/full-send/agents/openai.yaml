@@ -1,0 +1,4 @@
+interface:
+  display_name: "full-send"
+  short_description: "Deliver accepted work autonomously through merge"
+  default_prompt: "Use $full-send for this project and the task I describe."

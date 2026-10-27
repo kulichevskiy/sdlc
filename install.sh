@@ -50,7 +50,7 @@ Questions are skipped where there is no terminal to ask on, so the command
 stays usable from a script: it installs into this project for Claude Code in English.
 
 Bundles:
-  sdlc     — ten skills; start with setup
+  sdlc     — twelve skills; start with setup
   sdlc-ui  — three standalone web UI skills; start with ui-kit
 EOF
 }

@@ -4,7 +4,9 @@ to-spec
 to-tickets
 implement
 code-review
-babysit
+babysit-pr
+full-send
+full-stop
 ui-kit
 ui-implement
 ui-review

@@ -25,7 +25,7 @@ Put supporting files beside `SKILL.md` and link them with relative paths. The in
 
 ## Package the plugin
 
-`bundles/sdlc.txt` lists all ten SDLC skills. `bundles/sdlc-ui.txt` lists the UI subset. Update these lists when membership changes.
+`bundles/sdlc.txt` lists all twelve SDLC skills. `bundles/sdlc-ui.txt` lists the UI subset. Update these lists when membership changes.
 
 Codex, Claude Code, and Cursor each have a manifest inside `plugins/sdlc/` and a marketplace catalog at the repository root. All point to the same skill sources. Keep plugin versions aligned with `package.json`.
 

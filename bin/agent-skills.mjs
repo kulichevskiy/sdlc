@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url'
 const SOURCE = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'skills')
 const PLUGIN_SKILLS = resolve(SOURCE, '..', 'plugins', 'sdlc', 'skills')
 const BUNDLES = new Map([
-  ['sdlc', { entry: 'setup', summary: 'The complete ten-skill family; start with setup.' }],
+  ['sdlc', { entry: 'setup', summary: 'The complete twelve-skill family; start with setup.' }],
   ['sdlc-ui', { entry: 'ui-kit', summary: 'Three standalone web UI skills; start with ui-kit.' }],
 ].map(([name, bundle]) => [name, { ...bundle,
   members: readFileSync(new URL(`../bundles/${name}.txt`, import.meta.url), 'utf8').trim().split(/\s+/),

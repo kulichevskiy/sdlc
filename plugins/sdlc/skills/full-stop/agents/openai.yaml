@@ -1,0 +1,4 @@
+interface:
+  display_name: "full-stop"
+  short_description: "Deliver accepted work to an open PR ready to merge"
+  default_prompt: "Use $full-stop for this project and the task I describe."
