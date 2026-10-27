@@ -1,6 +1,6 @@
 # Install SDLC
 
-Install the `sdlc` plugin through an agent's plugin manager, or copy its skills with npx or the shell installer. The plugin contains all ten SDLC skills. The file installers also offer `sdlc-ui` for just `ui-kit`, `ui-implement`, and `ui-review`.
+Install the `sdlc` plugin through an agent's plugin manager, or copy its skills with npx or the shell installer. The plugin contains all twelve SDLC skills. The file installers also offer `sdlc-ui` for just `ui-kit`, `ui-implement`, and `ui-review`.
 
 ## Native plugin
 
@@ -116,3 +116,7 @@ node /path/to/sdlc/bin/agent-skills.mjs sdlc --target=codex --scope=project --la
 ```
 
 For native plugins, replace `kulichevskiy/sdlc` in the marketplace command with the absolute path to the checkout. Then run the same plugin install command.
+
+## Rename from babysit to babysit-pr
+
+The PR delivery skill is now `babysit-pr`. After updating a native plugin, use the new name. File installers replace current bundle members but preserve other skill directories, so an old `babysit` copy can remain after an update. If it belongs to this SDLC installation, remove that old directory from the selected installation location after verifying `babysit-pr` is installed; preserve any unrelated skill with the same name.

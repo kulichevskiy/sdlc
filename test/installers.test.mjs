@@ -8,7 +8,7 @@ import test from 'node:test'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const uiMembers = ['ui-kit', 'ui-implement', 'ui-review']
-const members = ['setup', 'capture-intent', 'to-spec', 'to-tickets', 'implement', 'code-review', 'babysit', ...uiMembers]
+const members = ['setup', 'capture-intent', 'to-spec', 'to-tickets', 'implement', 'code-review', 'babysit-pr', 'full-send', 'full-stop', ...uiMembers]
 const bundles = { sdlc: members, 'sdlc-ui': uiMembers }
 const targets = {
   claude: ['.claude/skills', '.claude/skills'],

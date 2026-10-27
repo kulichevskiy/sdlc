@@ -1,6 +1,6 @@
 # SDLC for AI-assisted product development
 
-SDLC is a plugin with ten skills for AI-assisted product development. It helps your coding agent clarify tasks, write specifications, implement changes, review code, and build web UI from shared components. Decisions and progress stay in your repository so you can continue the work in another session or agent.
+SDLC is a plugin with twelve skills for AI-assisted product development. It helps your coding agent clarify tasks, write specifications, implement changes, review code, and build web UI from shared components. Decisions and progress stay in your repository so you can continue the work in another session or agent.
 
 Works with Claude Code, Codex, Cursor, and GitHub Copilot.
 
@@ -76,9 +76,19 @@ For web UI work, start with `ui-kit`. You can use the three UI skills independen
 | [to-tickets](plugins/sdlc/skills/to-tickets/SKILL.md) | Split the specification into tickets with dependencies | `plan.md` and ticket files |
 | [implement](plugins/sdlc/skills/implement/SKILL.md) | Implement a ticket or an accepted plan | Code, tests, and `execution.md` |
 | [code-review](plugins/sdlc/skills/code-review/SKILL.md) | Check the change against intent, specification, and standards | `review.md` |
-| [babysit](plugins/sdlc/skills/babysit/SKILL.md) | Resolve CI failures and review feedback, then merge when requested | A checked pull request and delivery record |
+| [babysit-pr](plugins/sdlc/skills/babysit-pr/SKILL.md) | Repeat CI and review fixes with fresh review after each push, then merge when requested | A checked pull request and delivery record |
+| [full-send](plugins/sdlc/skills/full-send/SKILL.md) | Continue from the current agreed stage autonomously through merge | A verified merged PR |
+| [full-stop](plugins/sdlc/skills/full-stop/SKILL.md) | Continue autonomously until the PR is ready for the user to merge | An open, unmerged PR |
 
 Task documents live in `docs/feat-{slug}/` by default. Each stage reads the earlier decisions and records its results there.
+
+## Deliver while you are away
+
+At an agreed intent, spec, plan/tickets, or an existing implementation/PR, request `full-send` to continue through merge or `full-stop` to leave an open PR ready for you to merge. For example: "Use $full-send for this accepted intent" or "Use $full-stop for this plan."
+
+The agent completes missing stages and accepts downstream planning revisions within your agreed decisions without questions. Both modes include scoped commits, push, PR creation, necessary verification, and review communication. `babysit-pr` requests fresh review after each push and continues until the current head has a clean result and the other gates pass. It makes minimal fixes and pushes back on review loops or scope creep. If a blocker cannot be resolved within the agreed scope, the agent saves evidence and a continuation point, leaves the PR unmerged, and reports the blocker without waiting for you.
+
+`full-stop` disables auto-merge and removes the task PR from any merge queue. Both modes preserve production/data restrictions and required merge protections. See the [delivery contract](plugins/sdlc/skills/setup/references/delivery.md) for permissions and completion rules.
 
 ## Build web UI with a shared UI Kit
 

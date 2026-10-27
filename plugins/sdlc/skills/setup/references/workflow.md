@@ -1,16 +1,20 @@
-# Shared workflow contract — v3
+# Shared workflow contract — v4
 
 ## Mandatory setup entry check
 
-This entry check governs the seven core skills: setup, capture-intent, to-spec, to-tickets, implement, code-review, and babysit. The three standalone UI skills follow the [UI contract](../../ui-kit/references/ui-workflow.md), without mandatory setup or the full document chain; existing project policy still applies.
+This entry check governs the seven core skills: setup, capture-intent, to-spec, to-tickets, implement, code-review, and babysit-pr. The two delivery modes, full-send and full-stop, also use this contract. The three standalone UI skills follow the [UI contract](../../ui-kit/references/ui-workflow.md), without mandatory setup or the full document chain; existing project policy still applies.
 
 Before any core SDLC stage except setup itself, read `docs/sdlc/project.md`. If it is absent, draft, incomplete, or demonstrably unusable, follow [setup](../SKILL.md) first. Remember the original requested stage and task. Resume it after the profile is ready, retaining the user's existing task authorization. An unfinished setup leaves the original task pending with a concrete gap report; do not silently fall back to assumptions.
 
 Reuse accepted answers. A ready profile does not trigger another interview on each invocation. An older profile without these status names can be reused if it records accepted policy, usable commands, and closed setup gaps; normalize the status without reopening settled decisions. If it is unclear whether the old profile meets those conditions, repair only the missing information. Read-only requests remain read-only: if setup needs writes or decisions outside the allowed scope, report that specific blocker.
 
+## Unattended delivery modes
+
+When the user explicitly requests `full-send` or `full-stop` for a task, follow the [unattended delivery procedure](delivery.md) across all remaining stages. The user is away: its delegated acceptance, no-question behavior, verification permissions, and endpoint rules take precedence over interactive prompts and stage-end stops in this contract and individual stage skills. Accept downstream planning revisions within already accepted decisions, recording agent acceptance under that delegation. Outside these modes, the ordinary acceptance and permission rules below apply. Discussing or installing a mode does not activate it.
+
 ## Agent capabilities
 
-Install the full `sdlc` bundle (seven core skills plus three UI skills) side by side, including references. The `sdlc-ui` bundle contains only the three UI skills and their self-contained shared resources. Resolve linked files relative to the skill file, not the repository working directory. References to sibling skills mean the skills in this SDLC installation. In plugin mode use the host-provided SDLC namespace; if another installed skill has the same short name, follow the linked sibling file rather than the unrelated skill. Use the host's skill invocation mechanism when available; otherwise read the linked `SKILL.md` and follow it in the same session. No particular connector, CLI, or subagent API is required by the package. Use available authorized equivalents for Git and remote PR operations. If a required capability is unavailable, record the concrete blocker instead of inventing a tool or a successful result.
+Install the full `sdlc` bundle (seven core skills, two delivery modes, and three UI skills) side by side, including references. The `sdlc-ui` bundle contains only the three UI skills and their self-contained shared resources. Resolve linked files relative to the skill file, not the repository working directory. References to sibling skills mean the skills in this SDLC installation. In plugin mode use the host-provided SDLC namespace; if another installed skill has the same short name, follow the linked sibling file rather than the unrelated skill. Use the host's skill invocation mechanism when available; otherwise read the linked `SKILL.md` and follow it in the same session. No particular connector, CLI, or subagent API is required by the package. Use available authorized equivalents for Git and remote PR operations. If a required capability is unavailable, record the concrete blocker instead of inventing a tool or a successful result.
 
 Delegate only when allowed by the host, user, and project. Otherwise execute sequentially. Reviews without independent subagents use separate passes and disclose their limited independence; do not claim independent approval of your own implementation. Installing skills does not install development tools or grant execution permissions.
 
@@ -58,4 +62,4 @@ The accepted project profile defines all mandatory gates and exact scopes, inclu
 
 Repository instructions and adopted standards govern. Distinguish documented rules, observed conventions, and general review judgments. A reviewer cites the rule or explains the concrete failure scenario. Review task fulfillment against both intent outcomes and spec requirements.
 
-Each invocation performs the requested stage/scope. Follow established authorization for local changes, commits, publishing, communication, and merge. Do not assume merely installing or invoking a skill grants new external permissions. Continue authorized delivery without asking for the same permission again. Preserve repository-specific browser and secret-handling restrictions.
+Each invocation performs the requested stage/scope. Follow established authorization for local changes, commits, publishing, communication, and merge. Installing skills grants no external permissions. An explicit request for unattended delivery grants only the permissions defined in that mode; other invocations retain the ordinary task authorization boundary. Continue authorized delivery without asking for the same permission again. Preserve repository-specific browser and secret-handling restrictions.
