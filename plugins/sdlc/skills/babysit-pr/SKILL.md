@@ -11,6 +11,8 @@ Resolve the PR, target branch, current head, intended scope, accepted artifacts,
 
 Make the most minimal possible changes to appease the reviewers. Be careful of scope creep and don't be scared to push back. Evaluate each request against the accepted task and evidence; fix concrete defects, and explain why an invalid or out-of-scope request should not change this PR.
 
+Follow the [shared draft-PR lifecycle](../setup/references/workflow.md). If this task PR is draft, finish and verify the scoped work locally before marking it ready for remote CI/review; a user-requested draft handoff remains draft. After the transition, inspect checks on the live head. For an authorized batch of fixes, keep intermediate pushes draft, then restore ready after the local gates pass. Do not convert unrelated PRs or treat draft skips as verification.
+
 Inspect the PR body/diff, check runs, review decisions, issue comments, review comments, unresolved threads, and mergeability. Use the actual remote state; local success and old bot reactions do not establish current readiness. Preserve unrelated work using an isolated worktree where needed. If the current head has neither a completed required review nor a pending request for one, request that review using the same authorization and deduplication rules below before waiting. Apply this on entry and whenever the remote head changes.
 
 Repeat until the requested endpoint; one review round is not completion:

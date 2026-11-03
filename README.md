@@ -88,6 +88,8 @@ At an agreed intent, spec, plan/tickets, or an existing implementation/PR, reque
 
 The agent completes missing stages and accepts downstream planning revisions within your agreed decisions without questions. Both modes include scoped commits, push, PR creation, necessary verification, and review communication. `babysit-pr` requests fresh review after each push and continues until the current head has a clean result and the other gates pass. It makes minimal fixes and pushes back on review loops or scope creep. If a blocker cannot be resolved within the agreed scope, the agent saves evidence and a continuation point, leaves the PR unmerged, and reports the blocker without waiting for you.
 
+New PRs are drafts by default while implementation and fix batches are in progress. After local verification and review, delivery marks them ready to start remote CI/review. A requested draft handoff stays draft; skipped draft checks never count as final verification.
+
 `full-stop` disables auto-merge and removes the task PR from any merge queue. Both modes preserve production/data restrictions and required merge protections. See the [delivery contract](plugins/sdlc/skills/setup/references/delivery.md) for permissions and completion rules.
 
 ## Build web UI with a shared UI Kit
