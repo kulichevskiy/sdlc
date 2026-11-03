@@ -40,6 +40,7 @@ Not-applicable policy: enumerate justified cases; no silent skip for missing too
 
 ## PR gates
 
+PR lifecycle: create draft by default; mark ready after local verification/review when remote CI/review is in scope, unless explicitly overridden
 Remote repository and target branch: Pending
 Required CI check names and agreed enforcement expectations/evidence: Pending
 Reviewer and accepted completion signal: Pending

@@ -36,6 +36,14 @@ Use a short descriptive lowercase kebab-case slug. Reuse an existing directory w
 
 Create files when their stage needs them. Ticket files are the canonical task status; execution.md holds ownership, integrated commits, verification receipts, PR linkage, and the next action. Do not maintain a second task-status board. Default to a single integration branch/PR per change; ticket done means integrated and verified, not merged to main.
 
+## Publish draft pull requests by default
+
+When publishing a PR is authorized, create it as a draft by default (`gh pr create --draft` or the equivalent API option). Keep it draft while implementation or a batch of fixes is in progress. An explicit user instruction or an accepted project policy can override this default. Do not convert someone else's existing PR or change its stage without task authorization.
+
+After scoped implementation, local verification and the required local review pass, mark the PR ready for review when the requested delivery scope includes remote CI/review or readiness. This transition starts ready-only workflows: verify the new current-head checks before declaring readiness. Draft status, skipped checks and an old successful run do not satisfy final gates. If the user asked to leave a draft, leave it draft and report that endpoint. Do not mark a blocked or partially verified PR ready merely to finish the task.
+
+When CI can benefit, propose ready-only heavy jobs with a `ready_for_review` trigger, later `synchronize` updates, and cancellation of superseded runs. Changing project workflows requires task authorization; installing this skill alone does not authorize those edits. Preserve required check names, coverage and fail-closed result aggregation. Moving a PR back to draft for an authorized batch of changes must not disable checks for its next ready head.
+
 ## Revision and acceptance
 
 Give intent, spec, and plan an integer `revision`, `status: draft | accepted | superseded`, and `accepted_revision` (empty until accepted). Record a short acceptance note identifying the user's decision. References to upstream artifacts include path and revision. Increment revisions for material content changes; formatting and receipt updates do not create a new design revision. Never mark a revision accepted just because a prior version was accepted.
